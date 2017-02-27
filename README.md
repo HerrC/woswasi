@@ -2,7 +2,7 @@
 
 ## Roadmap
 
-### 0.0.1 :
+### [x] 0.0.1 :
 Zwischen 2 unterschiedlichen Zuständen eine Auswahl treffen.
 Datum und der ausgewählte Wert soll festgehalten werden.
 Optional kann noch ein Text eingegeben werden.
