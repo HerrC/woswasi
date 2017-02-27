@@ -9,11 +9,11 @@ Optional kann noch ein Text eingegeben werden.
 
 Ergebnis: Ausgabe nach Button-Click in der Console.
 
-### 0.0.2 :
+### [x] 0.0.2 :
 Einfache Liste der bisherigen eingeben Daten. Keine Speicherung erforderlich.
 
 ### 0.0.3 : 
-Sortierung der Liste nach Datum, zusätzlich kann aber auch nach der Gefühlauswahl sortiert werden.
+Neuer Eintrag wird nur erstellt wenn wirklich etwas ausgewählt wurde.
 
 ### 0.0.4 :
 Gefühl wird als icon/image dargestellt. Müssen noch nicht die *richtigen* Bilder sein.
