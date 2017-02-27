@@ -7,45 +7,11 @@
 </head>
 
 <body>
-    <div id="root">
-        <h2>New entry</h2>
-        <select id="selectVibe" v-model="newEntry.vibe">
-            <option v-for="vibe in vibes"> {{ vibe.label }} </option>
-        </select>
-        <input type="text" placeholder="optional text" v-model="newEntry.text" /><button @click="addEntry">Add new entry</button>
-    </div>
     <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
-
-    <script>
-        var app = new Vue({
-            el: '#root',
-            data: {
-                newEntry: { vibe: '', date: '', text: '' },
-                vibes: [
-                    { label: 'Fröhlich' },
-                    { label: 'Schrecklich' }
-                ]
-            },
-            methods: {
-                addEntry() {
-                        this.newEntry.date = new Date();
-                        console.log(this.newEntry.vibe + ' ' + this.newEntry.date + ' ' + this.newEntry.text);
-                        this.clearNewEntry();
-
-                },
-                clearNewEntry() {
-                    this.newEntry.vibe = '';
-                    this.newEntry.date = '';
-                    this.newEntry.text = '';
-                }
-
-            },
-            computed: {
-                
-            }
-
-        });
-    </script>
+    <div id="root">
+        <newentry></newentry>
+    </div>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
