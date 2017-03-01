@@ -1,3 +1,12 @@
+Vue.component('entry', {
+
+    template: `
+        <p><slot></slot></p>
+    `,
+
+});
+
+
 Vue.component('entry-list', {
     template:
     `
@@ -8,9 +17,8 @@ Vue.component('entry-list', {
             </select>
             <input type="text" placeholder="optional text" v-model="newEntry.text" />
             <button @click="addEntry">Add new entry</button>
-
-            <p v-for="entry in entries">{{getPrettyDate(entry.date)}} - {{entry.vibe}} - {{entry.text}}</p>
-
+            
+            <entry v-for="entry in entries">{{getPrettyDate(entry.date)}} - {{entry.vibe}} - {{entry.text}}</entry>
         </div>
     `,
 
