@@ -12,7 +12,7 @@ Ergebnis: Ausgabe nach Button-Click in der Console.
 ### [x] 0.0.2 :
 Einfache Liste der bisherigen eingeben Daten. Keine Speicherung erforderlich.
 
-### 0.0.3 : 
+### [x] 0.0.3 : 
 Neuer Eintrag wird nur erstellt wenn wirklich etwas ausgewählt wurde.
 
 ### 0.0.4 :
