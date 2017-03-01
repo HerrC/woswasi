@@ -38,12 +38,15 @@ Vue.component('entry-list', {
     
     methods: {
         addEntry() {
-            this.entries.push({
+            if (this.vibeIsNotEmpty()) {
+                // entry data is invalid
+                this.entries.push({
                 vibe: this.newEntry.vibe, 
                 date: new Date(),
                 text: this.newEntry.text});
 
-            this.clearNewEntry();
+                this.clearNewEntry();
+            }
 
         },
         clearNewEntry() {
@@ -54,6 +57,9 @@ Vue.component('entry-list', {
         getPrettyDate(d) {
             return ("0" + d.getDate()).slice(-2) + "-" + ("0"+(d.getMonth()+1)).slice(-2) + "-" +
                 d.getFullYear() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+        },
+        vibeIsNotEmpty() {
+            return this.newEntry.vibe != null && this.newEntry.vibe != "";
         }
     }
 });
