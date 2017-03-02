@@ -10,17 +10,18 @@ Vue.component('new-entry', {
         <button @click="addEntry">Add new entry</button>
     </div>`,
 
-    data () {
+    data() {
         return {
             newEntry: {
                 vibe: '', date: null, text: ''
             },
             vibes: [
-                { label: 'Froehlich' },
-                { label: 'Schrecklich' }
+                { label: 'Happy', path: 'icons/mood/happy.png' },
+                { label: 'Sad', path: 'icons/mood/sad.png' },
+                { label: 'Neutral', path: 'icons/mood/neutral.png' }
             ]
         }
-    }, 
+    },
 
     methods: {
         addEntry() {
@@ -31,7 +32,7 @@ Vue.component('new-entry', {
                 this.clearNewEntry();
 
             }
-        }, 
+        },
         clearNewEntry() {
             this.newEntry.vibe = '';
             this.newEntry.date = null;
@@ -63,7 +64,7 @@ Vue.component('entry-list', {
     data() {
         return {
             entries: [
-            ], 
+            ],
         }
     },
 
@@ -74,10 +75,10 @@ Vue.component('entry-list', {
         }
     },
 
-    created () {
+    created() {
         Event.$on('applied', (entry) => {
             // why do i have to write here again all properties?
-            this.entries.push({vibe: entry.vibe, date: entry.date, text: entry.text});
+            this.entries.push({ vibe: entry.vibe, date: entry.date, text: entry.text });
         });
     }
 });
