@@ -86,9 +86,6 @@ new Vue({
     el: '#root',
 
     methods: {
-        idontknow() {
-            alert('nononono')
-        }
     }
 });
 
