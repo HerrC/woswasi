@@ -15,7 +15,7 @@ Einfache Liste der bisherigen eingeben Daten. Keine Speicherung erforderlich.
 ### [x] 0.0.3 : 
 Neuer Eintrag wird nur erstellt wenn wirklich etwas ausgewählt wurde.
 
-### 0.0.4 : 
+### [x] 0.0.4 : 
 Aufteilen der Liste und der Einträge in unterschiedliche Components.
 
 ### 0.0.5 :

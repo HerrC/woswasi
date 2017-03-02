@@ -1,6 +1,5 @@
 window.Event = new Vue();
 
-
 Vue.component('new-entry', {
     template: `<div>
         <h2>New entry</h2>
