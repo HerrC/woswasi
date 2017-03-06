@@ -2,12 +2,14 @@ window.Event = new Vue();
 
 Vue.component('new-entry', {
     template: `<div>
-        <h2>New entry</h2>
+        <h1>New entry</h1>
         
 <img v-for="vibe in vibes" :src="vibe.path" v-bind:class="{selected:isSelected(vibe.label)}" @click="setSelected(vibe.label)"></img>
 <br /><br />
-        <input type="text" placeholder="optional text" v-model="newEntry.text" />
-        <button @click="addEntry">Add new entry</button>
+        <p class="control">
+            <input class="textarea" type="textarea" placeholder="optional text" v-model="newEntry.text" />
+        </p>
+        <a @click="addEntry" class="button is-dark">Add new entry</a>
     </div>`,
 
     data() {
