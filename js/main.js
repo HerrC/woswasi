@@ -26,7 +26,7 @@ Vue.component('new-entry', {
 
     methods: {
         addEntry() {
-            if (this.vibeIsNotEmpty()) {
+            if (this.moodIsSelected()) {
                 // is set before "sending"
                 this.newEntry.vibe = this.selectedItem;
                 this.newEntry.date = new Date();
@@ -40,7 +40,8 @@ Vue.component('new-entry', {
             this.newEntry.date = null;
             this.newEntry.text = '';
         },
-        vibeIsNotEmpty() {
+        
+        moodIsSelected() {
             return this.selectedItem != null && this.selectedItem != "";
         },
 
