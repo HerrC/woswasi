@@ -24,7 +24,7 @@ Gefühl wird als icon/image dargestellt. Müssen noch nicht die *richtigen* Bild
 ### 0.0.6 : 
 Use Bulma to make the UI a little bit prettier.
 
-### 0.0.6 :
+### 0.0.7 :
 Tags können angehängt werden. Bereitgestellt werden sie aus der einer data-variable.
 
 ### 0.1.0 :
