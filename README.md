@@ -18,8 +18,11 @@ Neuer Eintrag wird nur erstellt wenn wirklich etwas ausgewählt wurde.
 ### [x] 0.0.4 : 
 Aufteilen der Liste und der Einträge in unterschiedliche Components.
 
-### 0.0.5 :
+### [x] 0.0.5 :
 Gefühl wird als icon/image dargestellt. Müssen noch nicht die *richtigen* Bilder sein.
+
+### 0.0.6 : 
+Use Bulma to make the UI a little bit prettier.
 
 ### 0.0.6 :
 Tags können angehängt werden. Bereitgestellt werden sie aus der einer data-variable.
