@@ -26,6 +26,7 @@ Use Bulma to make the UI a little bit prettier.
 
 ### 0.0.7 :
 Tags können angehängt werden. Bereitgestellt werden sie aus der einer data-variable.
+http://bulma.io/documentation/elements/tag/ 
 
 ### 0.1.0 :
 Lesen des Gefühls und der Tags aus jeweils einer json-Datei.
