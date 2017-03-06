@@ -5,7 +5,7 @@ Vue.component('new-entry', {
         <h2>New entry</h2>
         
 <img v-for="vibe in vibes" :src="vibe.path" v-bind:class="{selected:isSelected(vibe.label)}" @click="setSelected(vibe.label)"></img>
-<br />
+<br /><br />
         <input type="text" placeholder="optional text" v-model="newEntry.text" />
         <button @click="addEntry">Add new entry</button>
     </div>`,
@@ -28,6 +28,7 @@ Vue.component('new-entry', {
         addEntry() {
             if (this.vibeIsNotEmpty()) {
                 // is set before "sending"
+                this.newEntry.vibe = this.selectedItem;
                 this.newEntry.date = new Date();
                 Event.$emit('applied', this.newEntry);
                 this.clearNewEntry();
@@ -40,7 +41,7 @@ Vue.component('new-entry', {
             this.newEntry.text = '';
         },
         vibeIsNotEmpty() {
-            return this.newEntry.vibe != null && this.newEntry.vibe != "";
+            return this.selectedItem != null && this.selectedItem != "";
         },
 
         isSelected(menuItem) {
