@@ -23,9 +23,23 @@
     <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
     <div id="root">
 
-        <new-entry @applied></new-entry>
-        <entry-list></entry-list>
+        <div class="tile is-ancestor">
+            <div class="tile is-6 is-parent is-vertical">
+                <div class="tile is-children box">
+                    <new-entry @applied></new-entry>
+                    
+                </div>
+            </div>
+            <div class="tile is-6 is-parent is-vertical">
+                <div class="tile is-children box">
+                    <entry-list></entry-list>
+                </div>
+            </div>
+            
+        </div>
 
+
+        
     </div>
     <script src="js/main.js"></script>
 </body>
