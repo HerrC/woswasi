@@ -3,9 +3,9 @@ window.Event = new Vue();
 Vue.component('new-entry', {
     template: `<div>
         <h2>New entry</h2>
-        <select id="selectVibe" v-model="newEntry.vibe">
-            <option v-for="vibe in vibes"> {{ vibe.label }} </option>
-        </select>
+        
+<img v-for="vibe in vibes" :src="vibe.path" v-bind:class="{selected:isSelected(vibe.label)}" @click="setSelected(vibe.label)"></img>
+<br />
         <input type="text" placeholder="optional text" v-model="newEntry.text" />
         <button @click="addEntry">Add new entry</button>
     </div>`,
@@ -19,7 +19,8 @@ Vue.component('new-entry', {
                 { label: 'Happy', path: 'icons/mood/happy.png' },
                 { label: 'Sad', path: 'icons/mood/sad.png' },
                 { label: 'Neutral', path: 'icons/mood/neutral.png' }
-            ]
+            ],
+            selectedItem: {}
         }
     },
 
@@ -40,6 +41,14 @@ Vue.component('new-entry', {
         },
         vibeIsNotEmpty() {
             return this.newEntry.vibe != null && this.newEntry.vibe != "";
+        },
+
+        isSelected(menuItem) {
+            return this.selectedItem == menuItem;
+        },
+
+        setSelected(menuItem) {
+            this.selectedItem = menuItem;
         }
     }
 });
