@@ -4,10 +4,15 @@ Vue.component('new-entry', {
     template: `<div>
         <h1>New entry</h1>
         
-<img v-for="mood in moods" :src="mood.path" v-bind:class="{selected:isSelected(mood.label)}" @click="setSelected(mood.label)"></img>
-<br /><br />
+<img 
+    v-for="mood in moods" 
+    v-bind:class="{selected:isSelected(mood.label)}" 
+    :src="mood.path" 
+    @click="setSelected(mood.label)"
+/>
+
         <p class="control">
-            <input class="textarea" type="textarea" placeholder="optional text" v-model="newEntry.text" />
+            <input class="textarea" type="textarea" placeholder="optional text" v-model="newEntry.text" @keyup.enter.ctrl="addEntry" />
         </p>
         <a @click="addEntry" class="button is-dark">Add new entry</a>
     </div>`,
