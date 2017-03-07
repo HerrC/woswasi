@@ -22,7 +22,7 @@ Vue.component('new-entry', {
                 { label: 'Sad', path: 'icons/mood/sad.png' },
                 { label: 'Neutral', path: 'icons/mood/neutral.png' }
             ],
-            selectedItem: {}
+            selectedItem: null
         }
     },
 
@@ -41,6 +41,7 @@ Vue.component('new-entry', {
             this.newEntry.mood = '';
             this.newEntry.date = null;
             this.newEntry.text = '';
+            this.selectedItem = null;
         },
         
         moodIsSelected() {
