@@ -21,7 +21,7 @@ Aufteilen der Liste und der Einträge in unterschiedliche Components.
 ### [x] 0.0.5 :
 Gefühl wird als icon/image dargestellt. Müssen noch nicht die *richtigen* Bilder sein.
 
-### 0.0.6 : 
+### [x] 0.0.6 : 
 Use Bulma to make the UI a little bit prettier.
 
 ### 0.0.7 :

@@ -10,7 +10,7 @@ Vue.component('new-entry', {
     :src="mood.path" 
     @click="setSelected(mood.label)"
 />
-
+<br /><br />
         <p class="control">
             <input class="textarea" type="textarea" placeholder="optional text" v-model="newEntry.text" @keyup.enter.ctrl="addEntry" />
         </p>
@@ -73,6 +73,16 @@ Vue.component('entry', {
         </div>
     `,
 
+    data () {
+        return {
+            moods: [
+                { label: 'Happy', path: 'icons/mood/happy.png' },
+                { label: 'Sad', path: 'icons/mood/sad.png' },
+                { label: 'Neutral', path: 'icons/mood/neutral.png' }
+            ],
+        }
+    },
+
     methods: {
         getPrettyDate(d) {
             return ("0" + d.getDate()).slice(-2) + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" +
@@ -95,11 +105,6 @@ Vue.component('entry-list', {
     data() {
         return {
             entries: [
-            ],
-            moods: [
-                { label: 'Happy', path: 'icons/mood/happy.png' },
-                { label: 'Sad', path: 'icons/mood/sad.png' },
-                { label: 'Neutral', path: 'icons/mood/neutral.png' }
             ],
         }
     },
