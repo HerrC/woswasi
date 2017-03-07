@@ -34,7 +34,6 @@ Vue.component('new-entry', {
                 this.newEntry.date = new Date();
                 Event.$emit('applied', this.newEntry);
                 this.clearNewEntry();
-
             }
         },
         clearNewEntry() {
@@ -60,18 +59,31 @@ Vue.component('new-entry', {
 
 
 Vue.component('entry', {
+
+    props: ['value'],
+    
     template: `
-        <p><slot></slot></p>
+        <div>
+            <p>{{getPrettyDate(value.date)}} - {{value.mood}} - {{value.text}}</p>
+        </div>
     `,
+
+    methods: {
+        getPrettyDate(d) {
+            return ("0" + d.getDate()).slice(-2) + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" +
+                d.getFullYear() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+        }
+    }
 
 });
 
 
 Vue.component('entry-list', {
+
     template:
     `
         <div>
-            <entry v-for="entry in entries">{{getPrettyDate(entry.date)}} - {{entry.mood}} - {{entry.text}}</entry>
+            <entry v-for="entry in entries" :value="entry"></entry>
         </div>
     `,
 
@@ -88,10 +100,7 @@ Vue.component('entry-list', {
     },
 
     methods: {
-        getPrettyDate(d) {
-            return ("0" + d.getDate()).slice(-2) + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" +
-                d.getFullYear() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
-        }
+        
     },
 
     created() {
