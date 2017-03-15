@@ -5,7 +5,7 @@
     <title>WosWasI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.2/css/bulma.min.css">
     <style>
-        selected {
+        img.selected {
             border-radius: 70px;
             box-shadow: 2px 6px 6px 0px rgba(0, 0, 0, 1);
         }
@@ -31,10 +31,10 @@
 
         <div class="tile is-ancestor">
             <div class="tile is-6 is-parent is-horizontal box">
-                <div class="tile is-3 is-children box">
+                <div class="tile is-children ">
                     <new-entry @applied></new-entry>
                 </div>
-                <div class="tile is-children box">
+                <div class="tile is-children ">
                     <tag-cloud></tag-cloud>
                 </div>
             </div>
