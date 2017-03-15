@@ -63,7 +63,7 @@ Vue.component('new-entry', {
 Vue.component('tag-cloud', {
 
     template: `<div>
-        <span v-for="tag in tags" class="tag is-medium" v-bind:class="{'is-info':isSelected(tag.id)}">{{tag.label}}<button v-bind:class="{delete:isSelected(tag.id)}" /></span>
+        <span v-for="tag in tags" class="tag is-medium" v-bind:class="{'is-info':isSelected(tag.id)}">{{tag.label}}<button v-if="isSelected(tag.id)" v-bind:class="{delete:isSelected(tag.id)}" /></span>
     </div>`,
 
     data () {
