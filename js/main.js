@@ -4,13 +4,13 @@ Vue.component('new-entry', {
     template: `<div>
         <h1>New entry</h1>
         
-<img 
-    v-for="mood in moods" 
-    v-bind:class="{selected:isSelected(mood.label)}" 
-    :src="mood.path" 
-    @click="setSelected(mood.label)"
-/>
-<br /><br />
+    <img 
+        v-for="mood in moods" 
+        v-bind:class="{selected:isSelected(mood.label)}" 
+        :src="mood.path" 
+        @click="setSelected(mood.label)"
+    />
+    <br /><br />
         <p class="control">
             <input class="textarea" type="textarea" placeholder="optional text" v-model="newEntry.text" @keyup.enter.ctrl="addEntry" />
         </p>
@@ -62,6 +62,23 @@ Vue.component('new-entry', {
     }
 });
 
+Vue.component('tag-cloud', {
+
+    template: `<div>
+        <span v-for="tag in tags" class="tag is-medium">{{tag.name}} </span>
+    </div>`,
+
+    data () {
+        return {
+            tags: [
+                {name: 'Arbeit'},
+                {name: 'Privat'},
+                {name: 'Iwi'},
+                {name: 'Hobby'}
+            ]
+        }
+    }
+});
 
 Vue.component('entry', {
 
@@ -91,7 +108,6 @@ Vue.component('entry', {
     }
 
 });
-
 
 Vue.component('entry-list', {
 
