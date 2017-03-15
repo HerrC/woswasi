@@ -30,24 +30,20 @@
     <div id="root">
 
         <div class="tile is-ancestor">
-            <div class="tile is-6 is-parent is-horizontal box">
-                <div class="tile is-children ">
+            <div class="tile is-half is-parent is-horizontal">
+                <div class="tile is-children box">
                     <new-entry @applied></new-entry>
                 </div>
                 <div class="tile is-children ">
                     <tag-cloud></tag-cloud>
                 </div>
             </div>
-            <div class="tile is-6 is-parent is-vertical">
+            <div class="tile is-half is-parent is-vertical">
                 <div class="tile is-children box">
                     <entry-list></entry-list>
                 </div>
             </div>
-            
         </div>
-
-
-        
     </div>
     <script src="js/main.js"></script>
 </body>
