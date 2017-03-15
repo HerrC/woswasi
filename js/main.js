@@ -2,8 +2,6 @@ window.Event = new Vue();
 
 Vue.component('new-entry', {
     template: `<div>
-        <h1>New entry</h1>
-        
     <img 
         v-for="mood in moods" 
         v-bind:class="{selected:isSelected(mood.label)}" 
@@ -65,17 +63,35 @@ Vue.component('new-entry', {
 Vue.component('tag-cloud', {
 
     template: `<div>
-        <span v-for="tag in tags" class="tag is-medium">{{tag.name}} </span>
+        <span v-for="tag in tags" class="tag is-medium" v-bind:class="{'is-info':isSelected(tag.id)}">{{tag.label}}<button v-bind:class="{delete:isSelected(tag.id)}" /></span>
     </div>`,
 
     data () {
         return {
+            selectedTags: [2, 4],
+
             tags: [
-                {name: 'Arbeit'},
-                {name: 'Privat'},
-                {name: 'Iwi'},
-                {name: 'Hobby'}
+                {id: 1, label: 'Arbeit'},
+                {id: 2, label: 'Privat'},
+                {id: 3, label: 'Iwi'},
+                {id: 4, label: 'Hobby'}
             ]
+        }
+    },
+
+    computed: {
+        tagclass: function(tagId) {
+            return {
+                tag: true,
+                'is-info': true,
+                selected: (this.selectedTags.indexOf(tagId) > -1) 
+            }
+        }
+    },
+
+    methods: {
+        isSelected(tagId) {
+            return (this.selectedTags.indexOf(tagId) > -1);
         }
     }
 });
